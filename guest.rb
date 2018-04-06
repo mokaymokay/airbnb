@@ -10,7 +10,8 @@ class Guest
   end
 
   def reserve_and_pay(month, dates, name = self.name)
-    HOSTS[1]@guest[name.to_sym] = dates
+    host = HOSTS[1].listing[1].guest
+    host[name.to_sym] = dates
     @dates_available = @dates_available[month] - dates
     puts @price * dates.length
   end
@@ -22,6 +23,5 @@ class Guest
 end
 
 kay = Guest.new("kay")
-#kay.reserve_and_pay("april",[7,8])
-p kay.name
-p HOSTS[1]
+kay.reserve_and_pay("april",[7,8])
+# p HOSTS[1].listing[1]

@@ -19,7 +19,7 @@ end
 
 module HostList
   HOSTS = {}
-  def self.add_host host
+  def self.add_host(host)
     HOSTS[(HOSTS.length + 1)] = host 
   end
 end
