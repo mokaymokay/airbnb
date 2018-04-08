@@ -11,15 +11,7 @@ class Listing
     @reviews = reviews
   end
 
-  def reserve_and_pay(guest_name, month, dates)
-    @guest[guest_name.to_sym] = dates
-    @dates_available = @dates_available[month] - dates
-    puts @price * dates.length
-  end
-
-  def leave_review(review)
-    @reviews[@guest.keys[0]] = review
-  end
+  
 
 end
 
